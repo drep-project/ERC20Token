@@ -4,13 +4,13 @@ contract DrepToken {
 
     string public name = "DREP";
     string public symbol = "DREP";
-    uint256 public decimals = 18;
+    uint8 public decimals = 18;
 
     mapping (address => uint256) public balanceOf;
     mapping (address => mapping (address => uint256)) public allowance;
 
     uint256 public totalSupply;
-    uint256 constant initialSupply = 5000000000;
+    uint256 constant initialSupply = 10000000000;
     
     bool public stopped = false;
 
