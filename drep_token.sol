@@ -74,8 +74,9 @@ contract DrepToken {
         stopped = false;
     }
 
-    function burn(uint256 _value) public {
+    function burn(uint256 _value) isRunning validAddress public {
         require(balanceOf[msg.sender] >= _value);
+        require(totalSupply >= _value);
         balanceOf[msg.sender] -= _value;
         totalSupply -= _value;
     }
