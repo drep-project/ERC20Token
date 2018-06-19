@@ -52,9 +52,9 @@ contract DrepToken {
         require(balanceOf[_from] >= _value);
         require(balanceOf[_to] + _value >= balanceOf[_to]);
         require(allowance[_from][msg.sender] >= _value);
-        balanceOf[_to] += _value;
-        balanceOf[_from] -= _value;
         allowance[_from][msg.sender] -= _value;
+        balanceOf[_from] -= _value;
+        balanceOf[_to] += _value;
         emit Transfer(_from, _to, _value);
         return true;
     }
