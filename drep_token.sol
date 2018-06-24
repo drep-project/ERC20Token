@@ -14,7 +14,7 @@ contract DrepToken {
     
     bool public stopped = false;
 
-    address owner = 0x0;
+    address internal owner = 0x0;
 
     modifier ownerOnly {
         require(owner == msg.sender);
